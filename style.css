@@ -1,0 +1,170 @@
+@font-face {
+    font-family: HankenGrotesk;
+    src: url(assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: HankenGrotesk;
+}
+.reaction{
+    color:  hsl(0, 100%, 67%);
+    background-color:  hsla(0, 100%, 67%, 0.075);
+}
+.memory{
+    color: hsl(39, 100%, 56%);
+    background-color: hsla(39, 100%, 56%, 0.075);
+}
+.verbal{
+    color: hsl(166, 100%, 37%);
+    background-color: hsla(166, 100%, 37%, 0.075);
+}
+.visual{
+    color: hsl(234, 85%, 45%);
+    background-color: hsla(234, 85%, 45%, 0.075);
+}
+body{
+    background-color: hsl(221, 100%, 96%);
+    display: grid;
+    place-items: center;
+    height: 100svh;
+}
+main{
+    display: flex;
+    flex-direction: row;
+
+    background-color: hsl(0, 0%, 100%) ;
+    box-shadow: 10px 15px 20px hsla(218, 12%, 39%, 0.1);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    
+    width:  35rem;
+    height: 24rem;
+}
+main .result-section{
+    width: 50%;
+    display: flex;
+    padding: 2rem 2rem 2.5rem 2rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+
+    background-image: linear-gradient(hsl(252, 100%, 67%),hsl(241, 81%, 54%));
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+}
+main .result-section .result-title{
+    opacity: 0.6;
+    font-weight: 600;
+}
+main .result-section .score{
+    aspect-ratio: 1;
+    width: 70%;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    background-image: linear-gradient(hsla(256, 72%, 46%, 1),hsla(241, 72%, 46%, 0));
+}
+main .result-section .score div h1{
+    font-size: 3.5rem;
+}
+main .result-section .score div p{
+    opacity: 0.5; 
+    font-size: 0.825rem;
+    font-weight: 500;
+    margin-top: -0.5rem;
+}
+main .result-section .result-description{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0 0.9rem
+}
+main .result-section .result-description p{
+    opacity: 0.6; 
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+main .summary-section{
+    padding: 2rem 1.75rem 2.25rem 1.75rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+main .summary-section .summary-title{
+    color: hsl(224, 30%, 27%);
+    font-weight: 800;
+}
+main .summary-section .categories{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: .75rem;
+}
+main .summary-section .category{
+    padding: 0 1ch 0 1ch;
+    height: 2.75rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: .5rem;
+}
+main .summary-section .category div{
+    display: flex;
+    gap: 1ch;
+}
+main .summary-section .category .summary-score{
+    color: hsla(224, 30%, 27%, 0.5);
+    font-weight: 800; 
+}
+main .summary-section .category .summary-score span{
+    color: hsl(224, 30%, 27%);
+}
+main .summary-section button{
+    background-color: hsl(224, 30%, 27%);
+    border: none;
+    height: var(--buttn-height, 2.75rem);
+    border-radius: 1.375rem;
+    color: hsl(0, 0%, 100%);
+    font-weight: 700;
+    font-size: 0.8rem;
+    transition: all 500ms ease;
+}
+main .summary-section button:focus,
+main .summary-section button:hover{
+    background-color: hsl(252, 100%, 67%);
+}
+
+    @media (max-width: 375px) {
+        body{
+            display: block;
+            height: 100svh;
+        }
+        main{
+            flex-direction: column;
+            
+            border-radius: 0;
+            box-shadow: none;        
+    
+            width: 100%;
+            height: 100%;
+        }
+        main .result-section{
+            width: 100%;
+            border-bottom-left-radius: 1.5rem;
+            border-top-right-radius: 0;
+        }
+        main .result-section .score{
+            width: 50%;
+        }
+        main .summary-section{
+            width: 100%;
+            height: 100%;
+        }
+    }
